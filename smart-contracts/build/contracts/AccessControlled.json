@@ -1,0 +1,1333 @@
+{
+  "contractName": "AccessControlled",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "accessControl",
+      "outputs": [
+        {
+          "internalType": "contract AccessControl",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"accessControl\",\"outputs\":[{\"internalType\":\"contract AccessControl\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"title\":\"AccessControlled\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Helper base contract that wires the shared AccessControl instance         and exposes convenience modifiers for derived contracts.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/AccessControlled.sol\":\"AccessControlled\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/AccessControl.sol\":{\"keccak256\":\"0xdac5cd73ba9ce9f7f5fe7441f9b07950e2386def9d396383556f8af425bfe842\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://021f200a33ff73430a8d4a8d6512c602b0100ade02215aefe790fea385c4f044\",\"dweb:/ipfs/QmNQtKHXwBMsA7YkkX5PXn452KnUbFk1Xm8a53jxwRTv5K\"]},\"project:/contracts/AccessControlled.sol\":{\"keccak256\":\"0x5eda18b1db0c36170e2abb8511e5cce6a460973a3260cfb049befb58b239e8d3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3a5e061c489930cd2eeefb07297fae5cce5b673ebf91514c5a1f9abc1853995c\",\"dweb:/ipfs/QmP2Rhq57wcfhajvvjnk9jN7ZyWCeCwMGhEHV43PJudQxA\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.19;\r\n\r\nimport \"./AccessControl.sol\";\r\n\r\n/**\r\n * @title AccessControlled\r\n * @notice Helper base contract that wires the shared AccessControl instance\r\n *         and exposes convenience modifiers for derived contracts.\r\n */\r\nabstract contract AccessControlled {\r\n    AccessControl public immutable accessControl;\r\n\r\n    constructor(address accessControlAddress) {\r\n        require(accessControlAddress != address(0), \"AccessControlled: zero address\");\r\n        accessControl = AccessControl(accessControlAddress);\r\n    }\r\n\r\n    modifier onlyAdmin() {\r\n        require(accessControl.isAdmin(msg.sender), \"AccessControlled: admin only\");\r\n        _;\r\n    }\r\n\r\n    modifier onlyVendor() {\r\n        require(accessControl.isVendor(msg.sender), \"AccessControlled: vendor only\");\r\n        _;\r\n    }\r\n\r\n    modifier onlyClient() {\r\n        require(accessControl.isClient(msg.sender), \"AccessControlled: client only\");\r\n        _;\r\n    }\r\n\r\n    modifier onlyKnownRole() {\r\n        require(\r\n            accessControl.isAdmin(msg.sender) ||\r\n                accessControl.isVendor(msg.sender) ||\r\n                accessControl.isClient(msg.sender),\r\n            \"AccessControlled: unregistered\"\r\n        );\r\n        _;\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\AdamBo\\Desktop\\ecom-web3\\smart-contracts\\contracts\\AccessControlled.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/AccessControlled.sol",
+    "exportedSymbols": {
+      "AccessControl": [
+        413
+      ],
+      "AccessControlled": [
+        507
+      ]
+    },
+    "id": 508,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 415,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".19"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:24:1"
+      },
+      {
+        "absolutePath": "project:/contracts/AccessControl.sol",
+        "file": "./AccessControl.sol",
+        "id": 416,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 508,
+        "sourceUnit": 414,
+        "src": "61:29:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "canonicalName": "AccessControlled",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 417,
+          "nodeType": "StructuredDocumentation",
+          "src": "94:183:1",
+          "text": " @title AccessControlled\n @notice Helper base contract that wires the shared AccessControl instance\n         and exposes convenience modifiers for derived contracts."
+        },
+        "fullyImplemented": true,
+        "id": 507,
+        "linearizedBaseContracts": [
+          507
+        ],
+        "name": "AccessControlled",
+        "nameLocation": "297:16:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "13007d55",
+            "id": 420,
+            "mutability": "immutable",
+            "name": "accessControl",
+            "nameLocation": "352:13:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 507,
+            "src": "321:44:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_AccessControl_$413",
+              "typeString": "contract AccessControl"
+            },
+            "typeName": {
+              "id": 419,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 418,
+                "name": "AccessControl",
+                "nameLocations": [
+                  "321:13:1"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 413,
+                "src": "321:13:1"
+              },
+              "referencedDeclaration": 413,
+              "src": "321:13:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AccessControl_$413",
+                "typeString": "contract AccessControl"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 441,
+              "nodeType": "Block",
+              "src": "416:158:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 431,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 426,
+                          "name": "accessControlAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 422,
+                          "src": "435:20:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "arguments": [
+                            {
+                              "hexValue": "30",
+                              "id": 429,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "467:1:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 428,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "459:7:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": {
+                              "id": 427,
+                              "name": "address",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "459:7:1",
+                              "typeDescriptions": {}
+                            }
+                          },
+                          "id": 430,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "459:10:1",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "435:34:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "416363657373436f6e74726f6c6c65643a207a65726f2061646472657373",
+                        "id": 432,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "471:32:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d17b8237c3d96ecbf77cff802458e2a95869bd1ed67fb77156583b19435d0707",
+                          "typeString": "literal_string \"AccessControlled: zero address\""
+                        },
+                        "value": "AccessControlled: zero address"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d17b8237c3d96ecbf77cff802458e2a95869bd1ed67fb77156583b19435d0707",
+                          "typeString": "literal_string \"AccessControlled: zero address\""
+                        }
+                      ],
+                      "id": 425,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "427:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 433,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "427:77:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 434,
+                  "nodeType": "ExpressionStatement",
+                  "src": "427:77:1"
+                },
+                {
+                  "expression": {
+                    "id": 439,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 435,
+                      "name": "accessControl",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 420,
+                      "src": "515:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AccessControl_$413",
+                        "typeString": "contract AccessControl"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 437,
+                          "name": "accessControlAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 422,
+                          "src": "545:20:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 436,
+                        "name": "AccessControl",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 413,
+                        "src": "531:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_AccessControl_$413_$",
+                          "typeString": "type(contract AccessControl)"
+                        }
+                      },
+                      "id": 438,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "531:35:1",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AccessControl_$413",
+                        "typeString": "contract AccessControl"
+                      }
+                    },
+                    "src": "515:51:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AccessControl_$413",
+                      "typeString": "contract AccessControl"
+                    }
+                  },
+                  "id": 440,
+                  "nodeType": "ExpressionStatement",
+                  "src": "515:51:1"
+                }
+              ]
+            },
+            "id": 442,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 423,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 422,
+                  "mutability": "mutable",
+                  "name": "accessControlAddress",
+                  "nameLocation": "394:20:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 442,
+                  "src": "386:28:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 421,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "386:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "385:30:1"
+            },
+            "returnParameters": {
+              "id": 424,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "416:0:1"
+            },
+            "scope": 507,
+            "src": "374:200:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 454,
+              "nodeType": "Block",
+              "src": "603:105:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "id": 447,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "644:3:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 448,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "648:6:1",
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "644:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "expression": {
+                            "id": 445,
+                            "name": "accessControl",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 420,
+                            "src": "622:13:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_AccessControl_$413",
+                              "typeString": "contract AccessControl"
+                            }
+                          },
+                          "id": 446,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "636:7:1",
+                          "memberName": "isAdmin",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 334,
+                          "src": "622:21:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view external returns (bool)"
+                          }
+                        },
+                        "id": 449,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "622:33:1",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "416363657373436f6e74726f6c6c65643a2061646d696e206f6e6c79",
+                        "id": 450,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "657:30:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d549c1cc93b4bb233da3cddc20342ea88238c6988108fd741e279b99c25fcac6",
+                          "typeString": "literal_string \"AccessControlled: admin only\""
+                        },
+                        "value": "AccessControlled: admin only"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d549c1cc93b4bb233da3cddc20342ea88238c6988108fd741e279b99c25fcac6",
+                          "typeString": "literal_string \"AccessControlled: admin only\""
+                        }
+                      ],
+                      "id": 444,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "614:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 451,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "614:74:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 452,
+                  "nodeType": "ExpressionStatement",
+                  "src": "614:74:1"
+                },
+                {
+                  "id": 453,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "699:1:1"
+                }
+              ]
+            },
+            "id": 455,
+            "name": "onlyAdmin",
+            "nameLocation": "591:9:1",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 443,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "600:2:1"
+            },
+            "src": "582:126:1",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 467,
+              "nodeType": "Block",
+              "src": "738:107:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "id": 460,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "780:3:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 461,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "784:6:1",
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "780:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "expression": {
+                            "id": 458,
+                            "name": "accessControl",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 420,
+                            "src": "757:13:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_AccessControl_$413",
+                              "typeString": "contract AccessControl"
+                            }
+                          },
+                          "id": 459,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "771:8:1",
+                          "memberName": "isVendor",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 353,
+                          "src": "757:22:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view external returns (bool)"
+                          }
+                        },
+                        "id": 462,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "757:34:1",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "416363657373436f6e74726f6c6c65643a2076656e646f72206f6e6c79",
+                        "id": 463,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "793:31:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_6ac28125d4d4a3ff58a9ee66b7f8008cfba3055dfde42b81d222e0ce8e5746c5",
+                          "typeString": "literal_string \"AccessControlled: vendor only\""
+                        },
+                        "value": "AccessControlled: vendor only"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_6ac28125d4d4a3ff58a9ee66b7f8008cfba3055dfde42b81d222e0ce8e5746c5",
+                          "typeString": "literal_string \"AccessControlled: vendor only\""
+                        }
+                      ],
+                      "id": 457,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "749:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 464,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "749:76:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 465,
+                  "nodeType": "ExpressionStatement",
+                  "src": "749:76:1"
+                },
+                {
+                  "id": 466,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "836:1:1"
+                }
+              ]
+            },
+            "id": 468,
+            "name": "onlyVendor",
+            "nameLocation": "725:10:1",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 456,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "735:2:1"
+            },
+            "src": "716:129:1",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 480,
+              "nodeType": "Block",
+              "src": "875:107:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "id": 473,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "917:3:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 474,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "921:6:1",
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "917:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "expression": {
+                            "id": 471,
+                            "name": "accessControl",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 420,
+                            "src": "894:13:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_AccessControl_$413",
+                              "typeString": "contract AccessControl"
+                            }
+                          },
+                          "id": 472,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "908:8:1",
+                          "memberName": "isClient",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 368,
+                          "src": "894:22:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view external returns (bool)"
+                          }
+                        },
+                        "id": 475,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "894:34:1",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "416363657373436f6e74726f6c6c65643a20636c69656e74206f6e6c79",
+                        "id": 476,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "930:31:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_e43b042a2b9c8d46a77d665a2b3439f03077c09cedfe770d7ba85e21a25e0085",
+                          "typeString": "literal_string \"AccessControlled: client only\""
+                        },
+                        "value": "AccessControlled: client only"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_e43b042a2b9c8d46a77d665a2b3439f03077c09cedfe770d7ba85e21a25e0085",
+                          "typeString": "literal_string \"AccessControlled: client only\""
+                        }
+                      ],
+                      "id": 470,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "886:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 477,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "886:76:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 478,
+                  "nodeType": "ExpressionStatement",
+                  "src": "886:76:1"
+                },
+                {
+                  "id": 479,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "973:1:1"
+                }
+              ]
+            },
+            "id": 481,
+            "name": "onlyClient",
+            "nameLocation": "862:10:1",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 469,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "872:2:1"
+            },
+            "src": "853:129:1",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 505,
+              "nodeType": "Block",
+              "src": "1015:254:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 500,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "id": 494,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "arguments": [
+                              {
+                                "expression": {
+                                  "id": 486,
+                                  "name": "msg",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 4294967281,
+                                  "src": "1070:3:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_magic_message",
+                                    "typeString": "msg"
+                                  }
+                                },
+                                "id": 487,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "1074:6:1",
+                                "memberName": "sender",
+                                "nodeType": "MemberAccess",
+                                "src": "1070:10:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "expression": {
+                                "id": 484,
+                                "name": "accessControl",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 420,
+                                "src": "1048:13:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_AccessControl_$413",
+                                  "typeString": "contract AccessControl"
+                                }
+                              },
+                              "id": 485,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "1062:7:1",
+                              "memberName": "isAdmin",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 334,
+                              "src": "1048:21:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                                "typeString": "function (address) view external returns (bool)"
+                              }
+                            },
+                            "id": 488,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "nameLocations": [],
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1048:33:1",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "||",
+                          "rightExpression": {
+                            "arguments": [
+                              {
+                                "expression": {
+                                  "id": 491,
+                                  "name": "msg",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 4294967281,
+                                  "src": "1125:3:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_magic_message",
+                                    "typeString": "msg"
+                                  }
+                                },
+                                "id": 492,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "1129:6:1",
+                                "memberName": "sender",
+                                "nodeType": "MemberAccess",
+                                "src": "1125:10:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "expression": {
+                                "id": 489,
+                                "name": "accessControl",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 420,
+                                "src": "1102:13:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_AccessControl_$413",
+                                  "typeString": "contract AccessControl"
+                                }
+                              },
+                              "id": 490,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "1116:8:1",
+                              "memberName": "isVendor",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 353,
+                              "src": "1102:22:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                                "typeString": "function (address) view external returns (bool)"
+                              }
+                            },
+                            "id": 493,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "nameLocations": [],
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1102:34:1",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "src": "1048:88:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "||",
+                        "rightExpression": {
+                          "arguments": [
+                            {
+                              "expression": {
+                                "id": 497,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 4294967281,
+                                "src": "1180:3:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 498,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "1184:6:1",
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "src": "1180:10:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "expression": {
+                              "id": 495,
+                              "name": "accessControl",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 420,
+                              "src": "1157:13:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_AccessControl_$413",
+                                "typeString": "contract AccessControl"
+                              }
+                            },
+                            "id": 496,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "1171:8:1",
+                            "memberName": "isClient",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 368,
+                            "src": "1157:22:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                              "typeString": "function (address) view external returns (bool)"
+                            }
+                          },
+                          "id": 499,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1157:34:1",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "1048:143:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "416363657373436f6e74726f6c6c65643a20756e72656769737465726564",
+                        "id": 501,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1206:32:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_8f96c1a481791ce07cfd62ea5699b2e86c486a0d6732fc01faa43e7e7b293171",
+                          "typeString": "literal_string \"AccessControlled: unregistered\""
+                        },
+                        "value": "AccessControlled: unregistered"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_8f96c1a481791ce07cfd62ea5699b2e86c486a0d6732fc01faa43e7e7b293171",
+                          "typeString": "literal_string \"AccessControlled: unregistered\""
+                        }
+                      ],
+                      "id": 483,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1026:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 502,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1026:223:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 503,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1026:223:1"
+                },
+                {
+                  "id": 504,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1260:1:1"
+                }
+              ]
+            },
+            "id": 506,
+            "name": "onlyKnownRole",
+            "nameLocation": "999:13:1",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 482,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1012:2:1"
+            },
+            "src": "990:279:1",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 508,
+        "src": "279:993:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:1241:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.19+commit.7dd6d404.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2025-12-17T19:25:13.697Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "title": "AccessControlled",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Helper base contract that wires the shared AccessControl instance         and exposes convenience modifiers for derived contracts.",
+    "version": 1
+  }
+}

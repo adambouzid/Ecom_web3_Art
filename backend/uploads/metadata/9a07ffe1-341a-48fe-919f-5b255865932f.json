@@ -1,0 +1,12 @@
+{
+  "name": "AdamBo",
+  "description": "je vend des nft de mamama",
+  "createdAt": 1765999759545,
+  "image": "http://localhost:4000/uploads/images/3edcfb7b-5802-405e-8e94-739b42955c9c.jfif",
+  "extra": {
+    "productFocus": "Nft",
+    "catalogHighlights": "cccccccccc",
+    "logistics": "ssss",
+    "contactEmail": "mehdi@mehdi"
+  }
+}

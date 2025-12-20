@@ -1,0 +1,12 @@
+{
+  "name": "AdamBo",
+  "description": "F",
+  "createdAt": 1766002475594,
+  "image": "http://localhost:4000/uploads/images/035d13a7-2897-45ef-9b68-033a90ac6f0d.jfif",
+  "extra": {
+    "productFocus": "F",
+    "catalogHighlights": "F",
+    "logistics": "F",
+    "contactEmail": "mehdi@mehdi"
+  }
+}
