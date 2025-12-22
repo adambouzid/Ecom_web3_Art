@@ -9624,15 +9624,15 @@
         507
       ],
       "UserManagement": [
-        1480
+        1536
       ]
     },
-    "id": 1481,
+    "id": 1537,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1313,
+        "id": 1369,
         "literals": [
           "solidity",
           "^",
@@ -9645,10 +9645,10 @@
       {
         "absolutePath": "project:/contracts/AccessControlled.sol",
         "file": "./AccessControlled.sol",
-        "id": 1314,
+        "id": 1370,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1481,
+        "scope": 1537,
         "sourceUnit": 508,
         "src": "61:32:5",
         "symbolAliases": [],
@@ -9659,7 +9659,7 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 1316,
+              "id": 1372,
               "name": "AccessControlled",
               "nameLocations": [
                 "431:16:5"
@@ -9668,7 +9668,7 @@
               "referencedDeclaration": 507,
               "src": "431:16:5"
             },
-            "id": 1317,
+            "id": 1373,
             "nodeType": "InheritanceSpecifier",
             "src": "431:16:5"
           }
@@ -9677,15 +9677,15 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 1315,
+          "id": 1371,
           "nodeType": "StructuredDocumentation",
           "src": "97:305:5",
           "text": " @title UserManagement\n @notice Stores lightweight on-chain metadata references for registered users.\n         The actual profile data (names, images…) is expected to live off-chain (e.g. IPFS),\n         and this contract only keeps the URI pointer plus emitted events for indexing."
         },
         "fullyImplemented": true,
-        "id": 1480,
+        "id": 1536,
         "linearizedBaseContracts": [
-          1480,
+          1536,
           507
         ],
         "name": "UserManagement",
@@ -9694,16 +9694,16 @@
         "nodes": [
           {
             "canonicalName": "UserManagement.UserProfile",
-            "id": 1322,
+            "id": 1378,
             "members": [
               {
                 "constant": false,
-                "id": 1319,
+                "id": 1375,
                 "mutability": "mutable",
                 "name": "metadataURI",
                 "nameLocation": "492:11:5",
                 "nodeType": "VariableDeclaration",
-                "scope": 1322,
+                "scope": 1378,
                 "src": "485:18:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -9712,7 +9712,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 1318,
+                  "id": 1374,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "485:6:5",
@@ -9725,12 +9725,12 @@
               },
               {
                 "constant": false,
-                "id": 1321,
+                "id": 1377,
                 "mutability": "mutable",
                 "name": "exists",
                 "nameLocation": "519:6:5",
                 "nodeType": "VariableDeclaration",
-                "scope": 1322,
+                "scope": 1378,
                 "src": "514:11:5",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -9739,7 +9739,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 1320,
+                  "id": 1376,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "514:4:5",
@@ -9754,31 +9754,31 @@
             "name": "UserProfile",
             "nameLocation": "462:11:5",
             "nodeType": "StructDefinition",
-            "scope": 1480,
+            "scope": 1536,
             "src": "455:78:5",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 1327,
+            "id": 1383,
             "mutability": "mutable",
             "name": "_profiles",
             "nameLocation": "581:9:5",
             "nodeType": "VariableDeclaration",
-            "scope": 1480,
+            "scope": 1536,
             "src": "541:49:5",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1322_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1378_storage_$",
               "typeString": "mapping(address => struct UserManagement.UserProfile)"
             },
             "typeName": {
-              "id": 1326,
+              "id": 1382,
               "keyName": "",
               "keyNameLocation": "-1:-1:-1",
               "keyType": {
-                "id": 1323,
+                "id": 1379,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "549:7:5",
@@ -9790,28 +9790,28 @@
               "nodeType": "Mapping",
               "src": "541:31:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1322_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1378_storage_$",
                 "typeString": "mapping(address => struct UserManagement.UserProfile)"
               },
               "valueName": "",
               "valueNameLocation": "-1:-1:-1",
               "valueType": {
-                "id": 1325,
+                "id": 1381,
                 "nodeType": "UserDefinedTypeName",
                 "pathNode": {
-                  "id": 1324,
+                  "id": 1380,
                   "name": "UserProfile",
                   "nameLocations": [
                     "560:11:5"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1322,
+                  "referencedDeclaration": 1378,
                   "src": "560:11:5"
                 },
-                "referencedDeclaration": 1322,
+                "referencedDeclaration": 1378,
                 "src": "560:11:5",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_UserProfile_$1322_storage_ptr",
+                  "typeIdentifier": "t_struct$_UserProfile_$1378_storage_ptr",
                   "typeString": "struct UserManagement.UserProfile"
                 }
               }
@@ -9821,23 +9821,23 @@
           {
             "anonymous": false,
             "eventSelector": "9ab5b01c08788936fb2b48da858665afe9fa06d32e17dc49e0510c24ba05c983",
-            "id": 1333,
+            "id": 1389,
             "name": "UserProfileUpdated",
             "nameLocation": "605:18:5",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1332,
+              "id": 1388,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1329,
+                  "id": 1385,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "account",
                   "nameLocation": "640:7:5",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1333,
+                  "scope": 1389,
                   "src": "624:23:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -9846,7 +9846,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1328,
+                    "id": 1384,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "624:7:5",
@@ -9860,13 +9860,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1331,
+                  "id": 1387,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "metadataURI",
                   "nameLocation": "656:11:5",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1333,
+                  "scope": 1389,
                   "src": "649:18:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -9875,7 +9875,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1330,
+                    "id": 1386,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "649:6:5",
@@ -9894,23 +9894,23 @@
           {
             "anonymous": false,
             "eventSelector": "e00f5bb3d65c009f43c278472080531a0ae63aa5bdd824d452b6bab09f8b8d1c",
-            "id": 1337,
+            "id": 1393,
             "name": "UserProfileDeleted",
             "nameLocation": "681:18:5",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1336,
+              "id": 1392,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1335,
+                  "id": 1391,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "account",
                   "nameLocation": "716:7:5",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1337,
+                  "scope": 1393,
                   "src": "700:23:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -9919,7 +9919,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1334,
+                    "id": 1390,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "700:7:5",
@@ -9938,23 +9938,23 @@
           },
           {
             "body": {
-              "id": 1345,
+              "id": 1401,
               "nodeType": "Block",
               "src": "814:2:5",
               "statements": []
             },
-            "id": 1346,
+            "id": 1402,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
               {
                 "arguments": [
                   {
-                    "id": 1342,
+                    "id": 1398,
                     "name": "accessControlAddress",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1339,
+                    "referencedDeclaration": 1395,
                     "src": "792:20:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -9962,10 +9962,10 @@
                     }
                   }
                 ],
-                "id": 1343,
+                "id": 1399,
                 "kind": "baseConstructorSpecifier",
                 "modifierName": {
-                  "id": 1341,
+                  "id": 1397,
                   "name": "AccessControlled",
                   "nameLocations": [
                     "775:16:5"
@@ -9982,17 +9982,17 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1340,
+              "id": 1396,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1339,
+                  "id": 1395,
                   "mutability": "mutable",
                   "name": "accessControlAddress",
                   "nameLocation": "753:20:5",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1346,
+                  "scope": 1402,
                   "src": "745:28:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -10001,7 +10001,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1338,
+                    "id": 1394,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "745:7:5",
@@ -10017,12 +10017,12 @@
               "src": "744:30:5"
             },
             "returnParameters": {
-              "id": 1344,
+              "id": 1400,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "814:0:5"
             },
-            "scope": 1480,
+            "scope": 1536,
             "src": "733:83:5",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -10030,7 +10030,7 @@
           },
           {
             "body": {
-              "id": 1381,
+              "id": 1437,
               "nodeType": "Block",
               "src": "1055:239:5",
               "statements": [
@@ -10042,7 +10042,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 1361,
+                        "id": 1417,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -10051,11 +10051,11 @@
                           "expression": {
                             "arguments": [
                               {
-                                "id": 1357,
+                                "id": 1413,
                                 "name": "metadataURI",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 1349,
+                                "referencedDeclaration": 1405,
                                 "src": "1080:11:5",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_string_calldata_ptr",
@@ -10070,7 +10070,7 @@
                                   "typeString": "string calldata"
                                 }
                               ],
-                              "id": 1356,
+                              "id": 1412,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -10082,14 +10082,14 @@
                                 "typeString": "type(bytes storage pointer)"
                               },
                               "typeName": {
-                                "id": 1355,
+                                "id": 1411,
                                 "name": "bytes",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "1074:5:5",
                                 "typeDescriptions": {}
                               }
                             },
-                            "id": 1358,
+                            "id": 1414,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -10105,7 +10105,7 @@
                               "typeString": "bytes calldata"
                             }
                           },
-                          "id": 1359,
+                          "id": 1415,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -10123,7 +10123,7 @@
                         "operator": "!=",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 1360,
+                          "id": 1416,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -10145,7 +10145,7 @@
                       },
                       {
                         "hexValue": "557365724d616e6167656d656e743a20656d707479206d65746164617461",
-                        "id": 1362,
+                        "id": 1418,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -10171,7 +10171,7 @@
                           "typeString": "literal_string \"UserManagement: empty metadata\""
                         }
                       ],
-                      "id": 1354,
+                      "id": 1410,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -10185,7 +10185,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 1363,
+                    "id": 1419,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10201,34 +10201,34 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1364,
+                  "id": 1420,
                   "nodeType": "ExpressionStatement",
                   "src": "1066:73:5"
                 },
                 {
                   "expression": {
-                    "id": 1373,
+                    "id": 1429,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 1365,
+                        "id": 1421,
                         "name": "_profiles",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1327,
+                        "referencedDeclaration": 1383,
                         "src": "1150:9:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1322_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1378_storage_$",
                           "typeString": "mapping(address => struct UserManagement.UserProfile storage ref)"
                         }
                       },
-                      "id": 1368,
+                      "id": 1424,
                       "indexExpression": {
                         "expression": {
-                          "id": 1366,
+                          "id": 1422,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -10239,7 +10239,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 1367,
+                        "id": 1423,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -10260,7 +10260,7 @@
                       "nodeType": "IndexAccess",
                       "src": "1150:21:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_UserProfile_$1322_storage",
+                        "typeIdentifier": "t_struct$_UserProfile_$1378_storage",
                         "typeString": "struct UserManagement.UserProfile storage ref"
                       }
                     },
@@ -10269,11 +10269,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 1370,
+                          "id": 1426,
                           "name": "metadataURI",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1349,
+                          "referencedDeclaration": 1405,
                           "src": "1200:11:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_calldata_ptr",
@@ -10282,7 +10282,7 @@
                         },
                         {
                           "hexValue": "74727565",
-                          "id": 1371,
+                          "id": 1427,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -10308,18 +10308,18 @@
                             "typeString": "bool"
                           }
                         ],
-                        "id": 1369,
+                        "id": 1425,
                         "name": "UserProfile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1322,
+                        "referencedDeclaration": 1378,
                         "src": "1174:11:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_UserProfile_$1322_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_UserProfile_$1378_storage_ptr_$",
                           "typeString": "type(struct UserManagement.UserProfile storage pointer)"
                         }
                       },
-                      "id": 1372,
+                      "id": 1428,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -10337,17 +10337,17 @@
                       "src": "1174:53:5",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_UserProfile_$1322_memory_ptr",
+                        "typeIdentifier": "t_struct$_UserProfile_$1378_memory_ptr",
                         "typeString": "struct UserManagement.UserProfile memory"
                       }
                     },
                     "src": "1150:77:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_UserProfile_$1322_storage",
+                      "typeIdentifier": "t_struct$_UserProfile_$1378_storage",
                       "typeString": "struct UserManagement.UserProfile storage ref"
                     }
                   },
-                  "id": 1374,
+                  "id": 1430,
                   "nodeType": "ExpressionStatement",
                   "src": "1150:77:5"
                 },
@@ -10356,7 +10356,7 @@
                     "arguments": [
                       {
                         "expression": {
-                          "id": 1376,
+                          "id": 1432,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -10367,7 +10367,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 1377,
+                        "id": 1433,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -10382,11 +10382,11 @@
                         }
                       },
                       {
-                        "id": 1378,
+                        "id": 1434,
                         "name": "metadataURI",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1349,
+                        "referencedDeclaration": 1405,
                         "src": "1274:11:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
@@ -10405,18 +10405,18 @@
                           "typeString": "string calldata"
                         }
                       ],
-                      "id": 1375,
+                      "id": 1431,
                       "name": "UserProfileUpdated",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1333,
+                      "referencedDeclaration": 1389,
                       "src": "1243:18:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (address,string memory)"
                       }
                     },
-                    "id": 1379,
+                    "id": 1435,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10432,28 +10432,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1380,
+                  "id": 1436,
                   "nodeType": "EmitStatement",
                   "src": "1238:48:5"
                 }
               ]
             },
             "documentation": {
-              "id": 1347,
+              "id": 1403,
               "nodeType": "StructuredDocumentation",
               "src": "824:150:5",
               "text": " @notice Upsert the metadata URI for the caller.\n         Caller must already hold at least one role (client/vendor/admin)."
             },
             "functionSelector": "495e6dc5",
-            "id": 1382,
+            "id": 1438,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 1352,
+                "id": 1408,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 1351,
+                  "id": 1407,
                   "name": "onlyKnownRole",
                   "nameLocations": [
                     "1041:13:5"
@@ -10470,17 +10470,17 @@
             "nameLocation": "989:13:5",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1350,
+              "id": 1406,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1349,
+                  "id": 1405,
                   "mutability": "mutable",
                   "name": "metadataURI",
                   "nameLocation": "1019:11:5",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1382,
+                  "scope": 1438,
                   "src": "1003:27:5",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -10489,7 +10489,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1348,
+                    "id": 1404,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1003:6:5",
@@ -10504,12 +10504,12 @@
               "src": "1002:29:5"
             },
             "returnParameters": {
-              "id": 1353,
+              "id": 1409,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1055:0:5"
             },
-            "scope": 1480,
+            "scope": 1536,
             "src": "980:314:5",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -10517,7 +10517,7 @@
           },
           {
             "body": {
-              "id": 1417,
+              "id": 1473,
               "nodeType": "Block",
               "src": "1504:233:5",
               "statements": [
@@ -10529,7 +10529,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 1399,
+                        "id": 1455,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -10538,11 +10538,11 @@
                           "expression": {
                             "arguments": [
                               {
-                                "id": 1395,
+                                "id": 1451,
                                 "name": "metadataURI",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 1387,
+                                "referencedDeclaration": 1443,
                                 "src": "1529:11:5",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_string_calldata_ptr",
@@ -10557,7 +10557,7 @@
                                   "typeString": "string calldata"
                                 }
                               ],
-                              "id": 1394,
+                              "id": 1450,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -10569,14 +10569,14 @@
                                 "typeString": "type(bytes storage pointer)"
                               },
                               "typeName": {
-                                "id": 1393,
+                                "id": 1449,
                                 "name": "bytes",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "1523:5:5",
                                 "typeDescriptions": {}
                               }
                             },
-                            "id": 1396,
+                            "id": 1452,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -10592,7 +10592,7 @@
                               "typeString": "bytes calldata"
                             }
                           },
-                          "id": 1397,
+                          "id": 1453,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -10610,7 +10610,7 @@
                         "operator": "!=",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 1398,
+                          "id": 1454,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -10632,7 +10632,7 @@
                       },
                       {
                         "hexValue": "557365724d616e6167656d656e743a20656d707479206d65746164617461",
-                        "id": 1400,
+                        "id": 1456,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -10658,7 +10658,7 @@
                           "typeString": "literal_string \"UserManagement: empty metadata\""
                         }
                       ],
-                      "id": 1392,
+                      "id": 1448,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -10672,7 +10672,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 1401,
+                    "id": 1457,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10688,37 +10688,37 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1402,
+                  "id": 1458,
                   "nodeType": "ExpressionStatement",
                   "src": "1515:73:5"
                 },
                 {
                   "expression": {
-                    "id": 1410,
+                    "id": 1466,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 1403,
+                        "id": 1459,
                         "name": "_profiles",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1327,
+                        "referencedDeclaration": 1383,
                         "src": "1599:9:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1322_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1378_storage_$",
                           "typeString": "mapping(address => struct UserManagement.UserProfile storage ref)"
                         }
                       },
-                      "id": 1405,
+                      "id": 1461,
                       "indexExpression": {
-                        "id": 1404,
+                        "id": 1460,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1385,
+                        "referencedDeclaration": 1441,
                         "src": "1609:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -10732,7 +10732,7 @@
                       "nodeType": "IndexAccess",
                       "src": "1599:18:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_UserProfile_$1322_storage",
+                        "typeIdentifier": "t_struct$_UserProfile_$1378_storage",
                         "typeString": "struct UserManagement.UserProfile storage ref"
                       }
                     },
@@ -10741,11 +10741,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 1407,
+                          "id": 1463,
                           "name": "metadataURI",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1387,
+                          "referencedDeclaration": 1443,
                           "src": "1646:11:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_calldata_ptr",
@@ -10754,7 +10754,7 @@
                         },
                         {
                           "hexValue": "74727565",
-                          "id": 1408,
+                          "id": 1464,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -10780,18 +10780,18 @@
                             "typeString": "bool"
                           }
                         ],
-                        "id": 1406,
+                        "id": 1462,
                         "name": "UserProfile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1322,
+                        "referencedDeclaration": 1378,
                         "src": "1620:11:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_UserProfile_$1322_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_UserProfile_$1378_storage_ptr_$",
                           "typeString": "type(struct UserManagement.UserProfile storage pointer)"
                         }
                       },
-                      "id": 1409,
+                      "id": 1465,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -10809,17 +10809,17 @@
                       "src": "1620:53:5",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_UserProfile_$1322_memory_ptr",
+                        "typeIdentifier": "t_struct$_UserProfile_$1378_memory_ptr",
                         "typeString": "struct UserManagement.UserProfile memory"
                       }
                     },
                     "src": "1599:74:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_UserProfile_$1322_storage",
+                      "typeIdentifier": "t_struct$_UserProfile_$1378_storage",
                       "typeString": "struct UserManagement.UserProfile storage ref"
                     }
                   },
-                  "id": 1411,
+                  "id": 1467,
                   "nodeType": "ExpressionStatement",
                   "src": "1599:74:5"
                 },
@@ -10827,11 +10827,11 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 1413,
+                        "id": 1469,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1385,
+                        "referencedDeclaration": 1441,
                         "src": "1708:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -10839,11 +10839,11 @@
                         }
                       },
                       {
-                        "id": 1414,
+                        "id": 1470,
                         "name": "metadataURI",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1387,
+                        "referencedDeclaration": 1443,
                         "src": "1717:11:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
@@ -10862,18 +10862,18 @@
                           "typeString": "string calldata"
                         }
                       ],
-                      "id": 1412,
+                      "id": 1468,
                       "name": "UserProfileUpdated",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1333,
+                      "referencedDeclaration": 1389,
                       "src": "1689:18:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (address,string memory)"
                       }
                     },
-                    "id": 1415,
+                    "id": 1471,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10889,28 +10889,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1416,
+                  "id": 1472,
                   "nodeType": "EmitStatement",
                   "src": "1684:45:5"
                 }
               ]
             },
             "documentation": {
-              "id": 1383,
+              "id": 1439,
               "nodeType": "StructuredDocumentation",
               "src": "1302:106:5",
               "text": " @notice Admins can set or override metadata for any account (e.g. vendor onboarding)."
             },
             "functionSelector": "52869c07",
-            "id": 1418,
+            "id": 1474,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 1390,
+                "id": 1446,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 1389,
+                  "id": 1445,
                   "name": "onlyAdmin",
                   "nameLocations": [
                     "1494:9:5"
@@ -10927,17 +10927,17 @@
             "nameLocation": "1423:15:5",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1388,
+              "id": 1444,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1385,
+                  "id": 1441,
                   "mutability": "mutable",
                   "name": "account",
                   "nameLocation": "1447:7:5",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1418,
+                  "scope": 1474,
                   "src": "1439:15:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -10946,7 +10946,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1384,
+                    "id": 1440,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1439:7:5",
@@ -10960,12 +10960,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1387,
+                  "id": 1443,
                   "mutability": "mutable",
                   "name": "metadataURI",
                   "nameLocation": "1472:11:5",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1418,
+                  "scope": 1474,
                   "src": "1456:27:5",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -10974,7 +10974,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1386,
+                    "id": 1442,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1456:6:5",
@@ -10989,12 +10989,12 @@
               "src": "1438:46:5"
             },
             "returnParameters": {
-              "id": 1391,
+              "id": 1447,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1504:0:5"
             },
-            "scope": 1480,
+            "scope": 1536,
             "src": "1414:323:5",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -11002,7 +11002,7 @@
           },
           {
             "body": {
-              "id": 1455,
+              "id": 1511,
               "nodeType": "Block",
               "src": "1903:313:5",
               "statements": [
@@ -11014,7 +11014,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 1434,
+                        "id": 1490,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -11024,14 +11024,14 @@
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           },
-                          "id": 1428,
+                          "id": 1484,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "expression": {
-                              "id": 1425,
+                              "id": 1481,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
@@ -11042,7 +11042,7 @@
                                 "typeString": "msg"
                               }
                             },
-                            "id": 1426,
+                            "id": 1482,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -11059,11 +11059,11 @@
                           "nodeType": "BinaryOperation",
                           "operator": "==",
                           "rightExpression": {
-                            "id": 1427,
+                            "id": 1483,
                             "name": "account",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1421,
+                            "referencedDeclaration": 1477,
                             "src": "1950:7:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -11082,7 +11082,7 @@
                           "arguments": [
                             {
                               "expression": {
-                                "id": 1431,
+                                "id": 1487,
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
@@ -11093,7 +11093,7 @@
                                   "typeString": "msg"
                                 }
                               },
-                              "id": 1432,
+                              "id": 1488,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -11116,7 +11116,7 @@
                               }
                             ],
                             "expression": {
-                              "id": 1429,
+                              "id": 1485,
                               "name": "accessControl",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
@@ -11127,7 +11127,7 @@
                                 "typeString": "contract AccessControl"
                               }
                             },
-                            "id": 1430,
+                            "id": 1486,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -11142,7 +11142,7 @@
                               "typeString": "function (address) view external returns (bool)"
                             }
                           },
-                          "id": 1433,
+                          "id": 1489,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -11166,7 +11166,7 @@
                       },
                       {
                         "hexValue": "557365724d616e6167656d656e743a206e6f7420616c6c6f776564",
-                        "id": 1435,
+                        "id": 1491,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -11192,7 +11192,7 @@
                           "typeString": "literal_string \"UserManagement: not allowed\""
                         }
                       ],
-                      "id": 1424,
+                      "id": 1480,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -11206,7 +11206,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 1436,
+                    "id": 1492,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11222,7 +11222,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1437,
+                  "id": 1493,
                   "nodeType": "ExpressionStatement",
                   "src": "1914:135:5"
                 },
@@ -11232,24 +11232,24 @@
                       {
                         "expression": {
                           "baseExpression": {
-                            "id": 1439,
+                            "id": 1495,
                             "name": "_profiles",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1327,
+                            "referencedDeclaration": 1383,
                             "src": "2068:9:5",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1322_storage_$",
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1378_storage_$",
                               "typeString": "mapping(address => struct UserManagement.UserProfile storage ref)"
                             }
                           },
-                          "id": 1441,
+                          "id": 1497,
                           "indexExpression": {
-                            "id": 1440,
+                            "id": 1496,
                             "name": "account",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1421,
+                            "referencedDeclaration": 1477,
                             "src": "2078:7:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -11263,11 +11263,11 @@
                           "nodeType": "IndexAccess",
                           "src": "2068:18:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_UserProfile_$1322_storage",
+                            "typeIdentifier": "t_struct$_UserProfile_$1378_storage",
                             "typeString": "struct UserManagement.UserProfile storage ref"
                           }
                         },
-                        "id": 1442,
+                        "id": 1498,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
@@ -11275,7 +11275,7 @@
                         "memberLocation": "2087:6:5",
                         "memberName": "exists",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1321,
+                        "referencedDeclaration": 1377,
                         "src": "2068:25:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -11284,7 +11284,7 @@
                       },
                       {
                         "hexValue": "557365724d616e6167656d656e743a2070726f66696c65206d697373696e67",
-                        "id": 1443,
+                        "id": 1499,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -11310,7 +11310,7 @@
                           "typeString": "literal_string \"UserManagement: profile missing\""
                         }
                       ],
-                      "id": 1438,
+                      "id": 1494,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -11324,7 +11324,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 1444,
+                    "id": 1500,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11340,13 +11340,13 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1445,
+                  "id": 1501,
                   "nodeType": "ExpressionStatement",
                   "src": "2060:69:5"
                 },
                 {
                   "expression": {
-                    "id": 1449,
+                    "id": 1505,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11357,24 +11357,24 @@
                     "src": "2140:25:5",
                     "subExpression": {
                       "baseExpression": {
-                        "id": 1446,
+                        "id": 1502,
                         "name": "_profiles",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1327,
+                        "referencedDeclaration": 1383,
                         "src": "2147:9:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1322_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1378_storage_$",
                           "typeString": "mapping(address => struct UserManagement.UserProfile storage ref)"
                         }
                       },
-                      "id": 1448,
+                      "id": 1504,
                       "indexExpression": {
-                        "id": 1447,
+                        "id": 1503,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1421,
+                        "referencedDeclaration": 1477,
                         "src": "2157:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -11388,7 +11388,7 @@
                       "nodeType": "IndexAccess",
                       "src": "2147:18:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_UserProfile_$1322_storage",
+                        "typeIdentifier": "t_struct$_UserProfile_$1378_storage",
                         "typeString": "struct UserManagement.UserProfile storage ref"
                       }
                     },
@@ -11397,7 +11397,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1450,
+                  "id": 1506,
                   "nodeType": "ExpressionStatement",
                   "src": "2140:25:5"
                 },
@@ -11405,11 +11405,11 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 1452,
+                        "id": 1508,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1421,
+                        "referencedDeclaration": 1477,
                         "src": "2200:7:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -11424,18 +11424,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 1451,
+                      "id": 1507,
                       "name": "UserProfileDeleted",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1337,
+                      "referencedDeclaration": 1393,
                       "src": "2181:18:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 1453,
+                    "id": 1509,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11451,20 +11451,20 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1454,
+                  "id": 1510,
                   "nodeType": "EmitStatement",
                   "src": "2176:32:5"
                 }
               ]
             },
             "documentation": {
-              "id": 1419,
+              "id": 1475,
               "nodeType": "StructuredDocumentation",
               "src": "1745:103:5",
               "text": " @notice Remove profile metadata (does not revoke roles, handled by AccessControl)."
             },
             "functionSelector": "a0441f29",
-            "id": 1456,
+            "id": 1512,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -11472,17 +11472,17 @@
             "nameLocation": "1863:13:5",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1422,
+              "id": 1478,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1421,
+                  "id": 1477,
                   "mutability": "mutable",
                   "name": "account",
                   "nameLocation": "1885:7:5",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1456,
+                  "scope": 1512,
                   "src": "1877:15:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -11491,7 +11491,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1420,
+                    "id": 1476,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1877:7:5",
@@ -11507,12 +11507,12 @@
               "src": "1876:17:5"
             },
             "returnParameters": {
-              "id": 1423,
+              "id": 1479,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1903:0:5"
             },
-            "scope": 1480,
+            "scope": 1536,
             "src": "1854:362:5",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -11520,74 +11520,74 @@
           },
           {
             "body": {
-              "id": 1478,
+              "id": 1534,
               "nodeType": "Block",
               "src": "2324:121:5",
               "statements": [
                 {
                   "assignments": [
-                    1467
+                    1523
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1467,
+                      "id": 1523,
                       "mutability": "mutable",
                       "name": "profile",
                       "nameLocation": "2354:7:5",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1478,
+                      "scope": 1534,
                       "src": "2335:26:5",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_UserProfile_$1322_memory_ptr",
+                        "typeIdentifier": "t_struct$_UserProfile_$1378_memory_ptr",
                         "typeString": "struct UserManagement.UserProfile"
                       },
                       "typeName": {
-                        "id": 1466,
+                        "id": 1522,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 1465,
+                          "id": 1521,
                           "name": "UserProfile",
                           "nameLocations": [
                             "2335:11:5"
                           ],
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 1322,
+                          "referencedDeclaration": 1378,
                           "src": "2335:11:5"
                         },
-                        "referencedDeclaration": 1322,
+                        "referencedDeclaration": 1378,
                         "src": "2335:11:5",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_UserProfile_$1322_storage_ptr",
+                          "typeIdentifier": "t_struct$_UserProfile_$1378_storage_ptr",
                           "typeString": "struct UserManagement.UserProfile"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1471,
+                  "id": 1527,
                   "initialValue": {
                     "baseExpression": {
-                      "id": 1468,
+                      "id": 1524,
                       "name": "_profiles",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1327,
+                      "referencedDeclaration": 1383,
                       "src": "2364:9:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1322_storage_$",
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserProfile_$1378_storage_$",
                         "typeString": "mapping(address => struct UserManagement.UserProfile storage ref)"
                       }
                     },
-                    "id": 1470,
+                    "id": 1526,
                     "indexExpression": {
-                      "id": 1469,
+                      "id": 1525,
                       "name": "account",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1458,
+                      "referencedDeclaration": 1514,
                       "src": "2374:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -11601,7 +11601,7 @@
                     "nodeType": "IndexAccess",
                     "src": "2364:18:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_UserProfile_$1322_storage",
+                      "typeIdentifier": "t_struct$_UserProfile_$1378_storage",
                       "typeString": "struct UserManagement.UserProfile storage ref"
                     }
                   },
@@ -11613,18 +11613,18 @@
                     "components": [
                       {
                         "expression": {
-                          "id": 1472,
+                          "id": 1528,
                           "name": "profile",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1467,
+                          "referencedDeclaration": 1523,
                           "src": "2401:7:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_UserProfile_$1322_memory_ptr",
+                            "typeIdentifier": "t_struct$_UserProfile_$1378_memory_ptr",
                             "typeString": "struct UserManagement.UserProfile memory"
                           }
                         },
-                        "id": 1473,
+                        "id": 1529,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
@@ -11632,7 +11632,7 @@
                         "memberLocation": "2409:11:5",
                         "memberName": "metadataURI",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1319,
+                        "referencedDeclaration": 1375,
                         "src": "2401:19:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -11641,18 +11641,18 @@
                       },
                       {
                         "expression": {
-                          "id": 1474,
+                          "id": 1530,
                           "name": "profile",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1467,
+                          "referencedDeclaration": 1523,
                           "src": "2422:7:5",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_UserProfile_$1322_memory_ptr",
+                            "typeIdentifier": "t_struct$_UserProfile_$1378_memory_ptr",
                             "typeString": "struct UserManagement.UserProfile memory"
                           }
                         },
-                        "id": 1475,
+                        "id": 1531,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
@@ -11660,7 +11660,7 @@
                         "memberLocation": "2430:6:5",
                         "memberName": "exists",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1321,
+                        "referencedDeclaration": 1377,
                         "src": "2422:14:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -11668,7 +11668,7 @@
                         }
                       }
                     ],
-                    "id": 1476,
+                    "id": 1532,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -11681,15 +11681,15 @@
                       "typeString": "tuple(string memory,bool)"
                     }
                   },
-                  "functionReturnParameters": 1464,
-                  "id": 1477,
+                  "functionReturnParameters": 1520,
+                  "id": 1533,
                   "nodeType": "Return",
                   "src": "2393:44:5"
                 }
               ]
             },
             "functionSelector": "0f53a470",
-            "id": 1479,
+            "id": 1535,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -11697,17 +11697,17 @@
             "nameLocation": "2233:10:5",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1459,
+              "id": 1515,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1458,
+                  "id": 1514,
                   "mutability": "mutable",
                   "name": "account",
                   "nameLocation": "2252:7:5",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1479,
+                  "scope": 1535,
                   "src": "2244:15:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -11716,7 +11716,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1457,
+                    "id": 1513,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2244:7:5",
@@ -11732,17 +11732,17 @@
               "src": "2243:17:5"
             },
             "returnParameters": {
-              "id": 1464,
+              "id": 1520,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1461,
+                  "id": 1517,
                   "mutability": "mutable",
                   "name": "metadataURI",
                   "nameLocation": "2298:11:5",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1479,
+                  "scope": 1535,
                   "src": "2284:25:5",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -11751,7 +11751,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1460,
+                    "id": 1516,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2284:6:5",
@@ -11764,12 +11764,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1463,
+                  "id": 1519,
                   "mutability": "mutable",
                   "name": "exists",
                   "nameLocation": "2316:6:5",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1479,
+                  "scope": 1535,
                   "src": "2311:11:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -11778,7 +11778,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1462,
+                    "id": 1518,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "2311:4:5",
@@ -11792,14 +11792,14 @@
               ],
               "src": "2283:40:5"
             },
-            "scope": 1480,
+            "scope": 1536,
             "src": "2224:221:5",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1481,
+        "scope": 1537,
         "src": "404:2044:5",
         "usedErrors": []
       }
@@ -11814,8 +11814,8 @@
     "1337": {
       "events": {},
       "links": {},
-      "address": "0xE674BE1Fda640f21EaF55201A5636CB43140cFA8",
-      "transactionHash": "0xef71eb20de20b61fbaf61ed366ccb60e663338eb5ee2fda3cb4f043fb537a732"
+      "address": "0xbfa9CaDCCd5e3bbC7aeEc2d0f99593d15Cc58EC7",
+      "transactionHash": "0x1316e0d4ef01e51ff823d95495f01685d87f7df90daf6fef6468d573e311dbfb"
     },
     "5777": {
       "events": {},
@@ -11825,7 +11825,7 @@
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2025-12-17T19:25:19.322Z",
+  "updatedAt": "2025-12-21T11:32:10.271Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

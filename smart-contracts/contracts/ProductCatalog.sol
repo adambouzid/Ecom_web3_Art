@@ -88,7 +88,19 @@ contract ProductCatalog is AccessControlled {
         emit ProductStatusChanged(productId, active);
     }
 
-    function decrementInventory(uint256 productId, uint256 quantity) external onlyAdmin {
+    address public orderManagement;
+
+    function setOrderManagement(address _om) external onlyAdmin {
+        orderManagement = _om;
+    }
+
+    modifier onlyOrderManagement() {
+        require(msg.sender == orderManagement, "ProductCatalog: unauthorized");
+        _;
+    }
+
+    function decrementInventory(uint256 productId, uint256 quantity) external {
+        require(msg.sender == orderManagement || accessControl.isAdmin(msg.sender), "ProductCatalog: unauthorized");
         Product storage product = _products[productId];
         require(product.vendor != address(0), "ProductCatalog: missing product");
         require(product.quantity >= quantity, "ProductCatalog: insufficient inventory");

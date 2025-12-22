@@ -17,4 +17,6 @@ module.exports = async function (deployer) {
   const catalog = await ProductCatalog.deployed();
 
   await deployer.deploy(OrderManagement, accessControl.address, catalog.address);
+  const orderManagement = await OrderManagement.deployed();
+  await catalog.setOrderManagement(orderManagement.address);
 };

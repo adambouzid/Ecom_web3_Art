@@ -54,7 +54,7 @@ contract OrderManagement is AccessControlled {
         uint256 productId,
         uint256 quantity,
         string calldata metadataURI
-    ) external onlyClient returns (uint256 orderId) {
+    ) external payable onlyKnownRole returns (uint256 orderId) {
         require(quantity > 0, "OrderManagement: quantity zero");
         require(bytes(metadataURI).length != 0, "OrderManagement: empty metadata");
 
@@ -62,6 +62,8 @@ contract OrderManagement is AccessControlled {
         require(product.active, "OrderManagement: product inactive");
         require(product.quantity >= quantity, "OrderManagement: insufficient stock");
         uint256 totalPrice = product.price * quantity;
+
+        require(msg.value == totalPrice, "OrderManagement: incorrect value");
 
         orderId = _nextOrderId++;
         _orders[orderId] = Order({
@@ -76,6 +78,8 @@ contract OrderManagement is AccessControlled {
         });
 
         catalog.decrementInventory(productId, quantity);
+        payable(product.vendor).transfer(msg.value);
+        
         emit OrderCreated(orderId, msg.sender, product.vendor, productId, quantity, totalPrice, metadataURI);
     }
 

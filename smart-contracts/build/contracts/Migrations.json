@@ -2601,8 +2601,8 @@
     "1337": {
       "events": {},
       "links": {},
-      "address": "0x1A64E454ee991bCc05BABE377c0cA565A9506c93",
-      "transactionHash": "0xd28d7fba8cd8ce67e33b63d0e3ca12c3b01638438481827e5c63e9c1ed89e70e"
+      "address": "0x74DeEf07A3E1804a4881cBdeF308307840B615A5",
+      "transactionHash": "0x294d1139f3d72ee90f28959933b70194360c1a8acbbe02ca4297796e3a62dc67"
     },
     "5777": {
       "events": {},
@@ -2612,7 +2612,7 @@
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2025-12-17T19:25:19.352Z",
+  "updatedAt": "2025-12-21T11:32:10.304Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "Standard Truffle migrations contract.",
