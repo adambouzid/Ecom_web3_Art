@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  
+  /* Pastoria Color Palette - Wood & Parchment */
+  --color-bg-deep: #1a1410;
+  --color-bg-card: #241e18;
+  --color-bg-surface: #2e261e;
+  --color-border: #3d2b1f;
+  --color-border-light: #5c4033;
+  --color-text-primary: #f4e8d3;
+  --color-text-secondary: #d4c4a8;
+  --color-text-muted: #a08060;
+  --color-accent: #c9a96e;
+  --color-accent-hover: #dbb878;
+}
+
+body {
+  @apply bg-[#1a1410] text-[#f4e8d3] antialiased;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  background: #1a1410;
+}
+
+/* Pastoria Card - Dark wood panel */
+.card {
+  @apply bg-[#241e18] border border-[#3d2b1f] rounded-xl;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Primary Button - Parchment style */
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-lg bg-[#3d2b1f] border border-[#5c4033] px-5 py-2.5 text-sm font-medium text-[#f4e8d3] transition-all;
+}
+.btn-primary:hover {
+  @apply bg-[#4a3728] border-[#8b7355];
+}
+.btn-primary:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-lg border border-[#5c4033] bg-transparent px-5 py-2.5 text-sm font-medium text-[#d4c4a8] transition-all;
+}
+.btn-secondary:hover {
+  @apply bg-[#2e261e] border-[#8b7355] text-[#f4e8d3];
+}
+
+/* Form Inputs - Antique style */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+  @apply w-full rounded-lg border border-[#5c4033] bg-[#2e261e] px-4 py-3 text-sm text-[#f4e8d3] placeholder-[#8b7355] outline-none transition-colors;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  @apply border-[#c9a96e];
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1410;
+}
+::-webkit-scrollbar-thumb {
+  background: #5c4033;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b7355;
+}
+
+/* Serif headings */
+.font-serif {
+  font-family: 'Crimson Pro', serif;
+}
+
+/* Typography overrides for Pastoria */
+h1, h2, h3, .font-display {
+  font-family: 'Crimson Pro', serif;
+  @apply text-[#f4e8d3];
+}
+
+/* Status badges */
+.badge-success {
+  @apply bg-[#2a4a2a] text-[#7a9a6a] border border-[#3a5a3a];
+}
+.badge-warning {
+  @apply bg-[#4a3a1a] text-[#c9a96e] border border-[#5a4a2a];
+}
+.badge-error {
+  @apply bg-[#4a2a2a] text-[#c97a7a] border border-[#5a3a3a];
+}
+.badge-info {
+  @apply bg-[#2a3a4a] text-[#7a9ac9] border border-[#3a4a5a];
+}
